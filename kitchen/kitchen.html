@@ -1,51 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="kitchen.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../common/room_style/room_style.css"
-    />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../kitchen/kitchen.css">
+    <link rel="stylesheet" type="text/css" href="../common/room_style/room_style.css">
     <title>Kitchen</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="main-container">
-      <div class="background">
-        <div class="puzzle-container">
-          <a href="/minigames/puzzle/puzzle.html">
-            <img
-              src="../resources/gallery/indice-puzzle.png"
-              id="puzzle-pieces"
-              alt="Puzzle pieces"
-            />
-          </a>
-        </div>
+        <div class="background">
 
-        <div class="cardgame-container">
-          <a href="/minigames/cardflip">
-            <img
-              src="../resources/gallery/indice-cardgame.png"
-              id="cardgame"
-              alt="Card game"
-            />
-          </a>
-        </div>
+            <!--Puzzle indice-->
+            <div class="puzzle-container" data-text="Peut-être qu'un puzzle détient la clé...">
+                <a href="/minigames/puzzle/puzzle.html">
+                    <img src="../resources/gallery/indice-puzzle.png" id="puzzle-pieces">
+                </a>
+            </div>
 
-        <a
-          href="../bedroom/bedroom.html"
-          class="arrow-button left-button"
-          aria-label="Go to bedroom"
-        ></a>
-        <a
-          href="../livingroom/livingroom.html"
-          class="arrow-button right-button"
-          aria-label="Go to living room"
-        ></a>
-      </div>
+            <!--cardgame indice-->
+            <div class="cardgame-container" data-text="Les cartes pourraient révéler quelque chose...">
+                <a href="/minigames/cardflip">
+                    <img src="../resources/gallery/indice-cardgame.png" id="cardgame">
+                </a>
+            </div>
+
+            <!-- bedroom Arrow -->
+            <a href="../bedroom/bedroom.html">
+                <div class="arrow-button left-button"></div>
+            </a>
+
+            <!-- LivingRoom Arrow -->
+            <a href="../livingroom/livingroom.html">
+                <div class="arrow-button right-button"></div>
+            </a>
+
+            <!--trou souris-->
+            <div class="hole-container" data-text="Cet indice pourrait révéler un passage secret..." data-img-secondaire="/resources/gallery/kitchen_fridge.png">
+                <img src="/resources/gallery/kitchen_hole.png" id="hole">
+            </div>
+
+            <!--cupboard-->
+            <div class="cupboard-container" data-text="Une cabane miniature ? Que cache-t-elle ?">
+                <img src="/resources/gallery/kitchen_cupboard.png" id="cupboard">
+            </div>
+
+            <!--frigo-->
+            <div class="fridge-container" data-text="Quelque chose est peut-être caché dans le frigo...">
+                <img src="/resources/gallery/kitchen_fridge.png" id="fridge">
+            </div>
+
+            <!--knife-->
+            <div class="knife-container" data-text="Une couteau!" data-img-secondaire="/resources/gallery/kitchen_fridge.png">
+                <img src="/resources/gallery/kitchen_knife.png" id="knife">
+            </div>
+
+            <!--shelf-->
+            <div class="shelf-container" data-text="Bizarre c'est bouteilles..." data-img-secondaire="/resources/gallery/kitchen_shelf.png">
+                <img src="/resources/gallery/kitchen_shelf.png" id="shelf">
+            </div>
+
+            <!--painting-->
+            <div class="painting-container" data-text="je vois pas d'image?" data-img-secondaire="/resources/gallery/kitchen_shelf.png">
+                <img src="/resources/gallery/kitchen_painting.png" id="painting">
+            </div>
+
+             <!--oven-->
+             <div class="oven-container" data-text="Ca sent le poulet?" data-img-secondaire="/resources/gallery/kitchen_oven.png">
+                <img src="/resources/gallery/kitchen_oven.png" id="oven">
+            </div>
+
+        </div>
     </div>
-  </body>
+    <script>
+        // Création de la pop-up
+        const popup = document.createElement('div');
+        popup.classList.add('popup-fullscreen');
+        popup.innerHTML = `
+            <div class="popup-content">
+                <div class="popup-image">
+                    <img src="" alt="Indice">
+                </div>
+                <div class="text-box" data-name="Clair">
+                    Texte de l'indice
+                </div>
+            </div>
+        `;
+        document.body.appendChild(popup);
+
+        // Styles pour la pop-up
+        const style = document.createElement('style');
+        style.textContent = `
+            .popup-fullscreen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+                flex-direction: column;
+            }
+            .popup-content {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+            .popup-image img {
+                max-width: 300%;
+                max-height: 300%;
+                object-fit: contain;
+                border-radius: 10px;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                overflow: hidden;
+            }
+
+            .text-box {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.3);
+                color: #693642;
+                border-radius: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                line-height: 1.5;
+                max-width: 50%;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+                word-wrap: break-word;
+            }
+
+            .text-box::before {
+                content: attr(data-name);
+                position: absolute;
+                top: -15px;
+                left: 10px;
+                background: #f5ccd9;
+                color: #6a2838;
+                font-size: 14px;
+                font-weight: bold;
+                padding: 2px 8px;
+                border-radius: 10px;
+            }
+
+        `;
+        document.head.appendChild(style);
+
+        // Fonction d'ouverture de la pop-up avec contenu dynamique
+        function showPopup(event) {
+            const text = event.currentTarget.getAttribute('data-text');
+            const imgSecondaire = event.currentTarget.getAttribute('data-img-secondaire');
+            const imgSrc = imgSecondaire || event.currentTarget.querySelector('img').src;
+            popup.querySelector('.popup-image img').src = imgSrc;
+            popup.querySelector('.text-box').textContent = text;
+            popup.style.display = 'flex';
+        }
+
+        // Sélection de tous les indices interactifs
+        const hintContainers = document.querySelectorAll('[data-text]');
+        hintContainers.forEach(container => {
+            container.addEventListener('click', showPopup);
+        });
+
+        // Fermeture de la pop-up au clic
+        popup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+</body>
+
 </html>
