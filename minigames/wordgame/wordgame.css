@@ -19,7 +19,10 @@ body {
     justify-content: center;
     position: relative;
     min-height: 100vh;
-    background-color: #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('assets/door_with_hand_background.png');
+
 }
 
 .content {
