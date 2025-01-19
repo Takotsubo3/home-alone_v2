@@ -45,14 +45,14 @@
   </div>
 </div>
 
-{% if winMessage %}
-  <div class="win-message">{{ winMessage }}</div>
-  {% endif %}
+{% if headerMessage %}
+  <div class="win-message">{{ headerMessage }}</div>
+{% endif %}
 
 <section class="memory-game">
   {% for card in cards %}
-    <div class="memory-card" data-framework="{{ card.id }}">
-      <img class="front-face" src="{{ card.image }}" alt="{{ card.i }}" dataset-framework="{{card.id}}">
+    <div class="memory-card" data-framework="{{ card.id }}" style="order: {{ loop.index0 }}">
+      <img class="front-face" src="{{ card.image }}" alt="{{ card.id }}">
       <img class="back-face" src="cardflip/assets/card_verso.png" alt="Card Back">
     </div>
   {% endfor %}

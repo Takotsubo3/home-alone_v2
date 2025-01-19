@@ -35,13 +35,12 @@ function renderCardflip() {
   const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
 
   const messages = loadMessages();
-  const allCardsMatched = true; // Change as per game logic
-  const winMessage = allCardsMatched ? messages.cardflip : '';
+  const headerMessage = messages.cardflip;
 
   const renderedHtml = nunjucks.render('cardflip.njk', {
     cards: shuffledCards,
     backgroundImage: 'cardflip/assets/card_game_background.jpeg',
-    winMessage,
+    headerMessage,
   });
 
   return renderedHtml;

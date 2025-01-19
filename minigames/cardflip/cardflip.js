@@ -1,74 +1,85 @@
 'use strict';
 
-const cards = document.getElementsByClassName('memory-card');
+const cards = document.querySelectorAll('.memory-card');
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+let matchedPairs = 0; // Counter to track matched pairs
+const totalPairs = cards.length / 2; // Total pairs in the game
 
-let flipped = false;
-let firstCard = null;
-let secondCard = null;
-let lock = false;
-let matchedPairs = 0;
-const totalPairs = cards.length / 2;
-
-const flipCard = function () {
-  if (lock || this === firstCard) {
-    return;
-  }
+function flipCard() {
+  if (lockBoard || this === firstCard) return;
 
   this.classList.add('flip');
 
-  if (!flipped) {
-    // First card flipped
-    flipped = true;
+  if (!hasFlippedCard) {
+    // First card clicked
+    hasFlippedCard = true;
     firstCard = this;
-  } else {
-    // Second card flipped
-    secondCard = this;
-    lock = true;
-
-    // Check for match
-    if (firstCard.dataset.framework === secondCard.dataset.framework) {
-      handleMatch();
-    } else {
-      unflipCards();
-    }
+    return;
   }
-};
 
-Array.from(cards).forEach((card) => card.addEventListener('click', flipCard));
+  // Second card clicked
+  secondCard = this;
+  checkForMatch();
+}
+
+function checkForMatch() {
+  const isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? handleMatch() : unflipCards();
+}
 
 function handleMatch() {
+  // Disable click events for matched cards
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-  resetCards();
 
-  matchedPairs++;
+  matchedPairs++; // Increment matched pairs counter
+
   if (matchedPairs === totalPairs) {
-    showWinMessage();
+    // All pairs matched
+    handleGameWin();
   }
+
+  resetBoard();
 }
 
 function unflipCards() {
+  lockBoard = true;
+
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-    resetCards();
-  }, 300);
+
+    resetBoard();
+  }, 1500);
 }
 
-function resetCards() {
-  [flipped, lock, firstCard, secondCard] = [false, false, null, null];
+function resetBoard() {
+  [hasFlippedCard, lockBoard, firstCard, secondCard] = [false, false, null, null];
 }
 
+function handleGameWin() {
+  // Display win message
+  const winMessageElement = document.createElement('div');
+  winMessageElement.textContent = 'Congratulations! You matched all the cards!';
+  winMessageElement.classList.add('win-message');
+  document.body.appendChild(winMessageElement);
+
+  // Optionally: Add restart button or redirect
+  setTimeout(() => {
+    alert('You won! Play again?');
+    window.location.reload(); // Reload the game
+  }, 1000);
+}
+
+// Shuffle cards on page load
 (function shuffleCards() {
-  Array.from(cards).forEach((card) => {
+  cards.forEach(card => {
     card.style.order = Math.floor(Math.random() * cards.length);
   });
 })();
 
-function showPopup() {
-  document.getElementById('popupContainer').style.display = 'flex';
-}
-
-function hidePopup() {
-  document.getElementById('popupContainer').style.display = 'none';
-}
+// Attach click event listener to each card
+cards.forEach(card => card.addEventListener('click', flipCard));
