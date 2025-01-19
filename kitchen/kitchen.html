@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="kitchen.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../common/room_style/room_style.css"
-    />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../kitchen/kitchen.css">
+    <link rel="stylesheet" type="text/css" href="../common/room_style/room_style.css">
     <title>Kitchen</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="main-container">
-      <div class="background">
-        <div class="puzzle-container">
-          <a href="/minigames/puzzle/puzzle.html">
-            <img
-              src="../resources/gallery/indice-puzzle.png"
-              id="puzzle-pieces"
-              alt="Puzzle pieces"
-            />
-          </a>
-        </div>
+        <div class="background">
 
-        <div class="cardgame-container">
-          <a href="/minigames/cardflip">
-            <img
-              src="../resources/gallery/indice-cardgame.png"
-              id="cardgame"
-              alt="Card game"
-            />
-          </a>
-        </div>
+            <!--Puzzle indice-->
+            <div class="puzzle-container" data-text="Peut-être qu'un puzzle détient la clé...">
+                <a href="/minigames/puzzle/puzzle.html">
+                    <img src="../resources/gallery/indice-puzzle.png" id="puzzle-pieces">
+                </a>
+            </div>
 
-        <a
-          href="../bedroom/bedroom.html"
-          class="arrow-button left-button"
-          aria-label="Go to bedroom"
-        ></a>
-        <a
-          href="../livingroom/livingroom.html"
-          class="arrow-button right-button"
-          aria-label="Go to living room"
-        ></a>
-      </div>
+            <!--cardgame indice-->
+            <div class="cardgame-container" data-text="Les cartes pourraient révéler quelque chose...">
+                <a href="/minigames/cardflip">
+                    <img src="../resources/gallery/indice-cardgame.png" id="cardgame">
+                </a>
+            </div>
+
+            <!-- bedroom Arrow -->
+            <a href="../bedroom/bedroom.html">
+                <div class="arrow-button left-button"></div>
+            </a>
+
+            <!-- LivingRoom Arrow -->
+            <a href="../livingroom/livingroom.html">
+                <div class="arrow-button right-button"></div>
+            </a>
+
+            <!--trou souris-->
+            <div class="hole-container" data-text="Cet indice pourrait révéler un passage secret..." data-img-secondaire="/resources/gallery/kitchen_fridge.png">
+                <img src="/resources/gallery/kitchen_hole.png" id="hole">
+            </div>
+
+            <!--cupboard-->
+            <div class="cupboard-container" data-text="Une cabane miniature ? Que cache-t-elle ?">
+                <img src="/resources/gallery/kitchen_cupboard.png" id="cupboard">
+            </div>
+
+            <!--frigo-->
+            <div class="fridge-container" data-text="Quelque chose est peut-être caché dans le frigo...">
+                <img src="/resources/gallery/kitchen_fridge.png" id="fridge">
+            </div>
+
+            <!--knife-->
+            <div class="knife-container" data-text="Une couteau!" data-img-secondaire="/resources/gallery/kitchen_fridge.png">
+                <img src="/resources/gallery/kitchen_knife.png" id="knife">
+            </div>
+
+            <!--shelf-->
+            <div class="shelf-container" data-text="Bizarre c'est bouteilles..." data-img-secondaire="/resources/gallery/kitchen_shelf.png">
+                <img src="/resources/gallery/kitchen_shelf.png" id="shelf">
+            </div>
+
+            <!--painting-->
+            <div class="painting-container" data-text="je vois pas d'image?" data-img-secondaire="/resources/gallery/kitchen_shelf.png">
+                <img src="/resources/gallery/kitchen_painting.png" id="painting">
+            </div>
+
+             <!--oven-->
+             <div class="oven-container" data-text="Ca sent le poulet?" data-img-secondaire="/resources/gallery/kitchen_oven.png">
+                <img src="/resources/gallery/kitchen_oven.png" id="oven">
+            </div>
+
+        </div>
     </div>
-  </body>
+
+    <script src="../common/room_style/pop-up.js"></script>
+</body>
+
 </html>

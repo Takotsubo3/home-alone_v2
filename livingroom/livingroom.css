@@ -1,99 +1,91 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    height: 100vh;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.background {
     background-image: url("../resources/gallery/livingroom_background.png");
-}
-/* Tjr un problème sur la taille de l'image*/
 
-/*les boutons flèche */
-.arrow-button {
-    position: fixed;
-    top: 50%;
-    width: 35px; 
-    height: 25px; 
+}
+/*indice skull*/
+.skull-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 95);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    top: 26.2%;
+    left: 32.3%;
+    transition: filter 0.1s ease, transform 0.1s ease;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
-/* Flèche vers la gauche */
-.left-button {
-    left: 30px;
+.skull-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.left-button::before, .left-button::after {
-    content: '';
+#skull:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice picture*/
+.picture-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 260);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
+    top: 16.8%;
+    left: 43%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
 }
 
-.left-button::before {
-    width: 0;
-    height: 0;
-    border-top: 35px solid transparent; 
-    border-bottom: 35px solid transparent; 
-    border-right: 35px solid rgb(115, 18, 128); 
-    left: 10px;
-    top: -21px;
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.left-button::after {
-    width: 55px; 
-    height: 30px;
-    background-color: rgb(115, 18, 128);
-    left: 25px;
-    top: -2px;
+#picture:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
 }
 
-/* Flèche vers la droite */
-.right-button {
-    right: 30px;
-}
-
-.right-button::before, .right-button::after {
-    content: '';
+/*indice key*/
+.keys-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 80);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
+    top: 47%;
+    left: 37.2%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
 }
 
-.right-button::before {
-    /* Triangle pour la pointe de la flèche droite */
-    width: 0;
-    height: 0;
-    border-top: 35px solid transparent; 
-    border-bottom: 35px solid transparent; 
-    border-left: 35px solid rgb(115, 18, 128); 
-    right: 10px;
-    top: -21px; 
+.keys-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.right-button::after {
-    width: 55px; 
-    height: 30px;
-    background-color: rgb(115, 18, 128);
-    right: 25px;
-    top: -2px;
+#keys:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
 }
 
-
-.left-button:hover::before {
-    border-right-color: rgb(147, 21, 163);
+/*indice mirror*/
+.mirror-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 150);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    top: 35%;
+    left: 12%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
 }
 
-.left-button:hover::after {
-    background-color: rgb(147, 21, 163);
+.mirror-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.right-button:hover::before {
-    border-left-color: rgb(147, 21, 163);
-}
-
-.right-button:hover::after {
-    background-color: rgb(147, 21, 163);
+#mirror:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
 }

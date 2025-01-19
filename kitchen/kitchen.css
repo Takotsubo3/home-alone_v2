@@ -1,23 +1,20 @@
 .background {
     background-image: url("../resources/gallery/Kitchen_Background_Future.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .puzzle-container {
-    width: calc(min(100vw / 1920, 100vh / 1080) * 260);
-    height: auto;
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 260);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
     bottom: 2%;
     left: 33%;
-    transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: filter 0.1s ease, transform 0.1s ease;
     cursor: pointer;
 }
 
 .puzzle-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -27,18 +24,19 @@
 }
 
 .cardgame-container {
-    width: calc(min(100vw / 1920, 100vh / 1080) * 200);
-    height: auto;
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 200);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
     bottom: 31.5%;
     right: 28.7%;
-    transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: filter 0.1s ease, transform 0.1s ease;
     cursor: pointer;
 }
 
+/*Cardgame*/
 .cardgame-container img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
 }
 
@@ -47,23 +45,206 @@
     transform: scale(1.05);
 }
 
-.arrow-button {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+
+
+/*Indice hole*/
+.hole-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 75);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
+    bottom: 17%;
+    right: 15.9%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
 }
 
-.left-button {
+.hole-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#hole:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice fridge*/
+.fridge-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 325);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: -0.75%;
+    left: -0.5%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.fridge-container img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+
+#fridge:hover {
+    filter: drop-shadow(0 0 2px #ff9900);
+    transform: scale(1.005);
+}
+
+
+/*cupboard fridge*/
+.cupboard-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 150);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 21.5%;
+    left: 36.5%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.cupboard-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#cupboard:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+
+/*indice knife*/
+.knife-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 95);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 32.6%;
+    left: 40.2%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.knife-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#knife:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice shelf*/
+.shelf-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 175);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    top: 26.2%;
+    right: 13%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.shelf-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#shelf:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+
+/*indice painting*/
+.painting-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 190);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 40%;
+    left: 25.8%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.painting-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#painting:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice oven*/
+.oven-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 110);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 17.4%;
+    left: 18.5%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.oven-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#oven:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*Text Bbox*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    color: #693642;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    word-wrap: break-word;
+}
+
+.text-box::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -15px;
     left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.right-button {
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    background: #f5ccd9;
+    color: #6a2838;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 10px;
 }

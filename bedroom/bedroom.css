@@ -1,7 +1,7 @@
 .background{
     background-image: url("../resources/gallery/bedroom_background.png");
 }
-
+/* HANGMAN */
 .hangman-container{
     width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 180); /* Set width based on the formula */
     height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto); /* Adjust height */
@@ -22,7 +22,7 @@
     filter: drop-shadow(0 0 10px rgba(201, 152, 25, 0.452));
     transform: scale(1.1);
 }
-
+/* GAMEPLATE */
 .gameplate-container{
     width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 180); /* Set width based on the formula */
     height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto); /* Adjust height */
@@ -77,3 +77,113 @@
     filter: drop-shadow(0 0 10px rgba(201, 152, 25, 0.452));
 }
 */
+
+/*indice bed*/
+.bed-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 605);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 3%;
+    left: 12%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.bed-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#bed:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice bear*/
+.bear-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 80);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 32.2%;
+    right: 18.7%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.bear-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#bear:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice blanket*/
+.blanket-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 95);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 12%;
+    right: 17.7%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.blanket-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#blanket:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice books*/
+.books-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 135);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    top: 31.5%;
+    right: 18%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.books-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#books:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
+
+/*indice calendar*/
+.calendar-container {
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 130);
+    height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
+    position: absolute;
+    bottom: 39.5%;
+    left: 13.5%;
+    transition: filter 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+
+.calendar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#calendar:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
+}
