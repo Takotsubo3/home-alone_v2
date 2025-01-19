@@ -29,7 +29,6 @@
 <body>
 {# <h1>Parallel Universe</h1> #}
 
-
 <div class="buttons">
   <button class="close-button">
     <a href="../../kitchen/kitchen.html">X</a>
@@ -51,7 +50,7 @@
 
 <section class="memory-game">
   {% for card in cards %}
-    <div class="memory-card" data-framework="{{ card.id }}" style="order: {{ loop.index0 }}">
+    <div class="memory-card" data-framework="{{ card.id }}">
       <img class="front-face" src="{{ card.image }}" alt="{{ card.id }}">
       <img class="back-face" src="cardflip/assets/card_verso.png" alt="Card Back">
     </div>

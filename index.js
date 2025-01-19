@@ -11,8 +11,6 @@ const traite_requete = function (req, res) {
   const requete = url.parse(req.url, true);
   const pathname = requete.pathname;
 
-  console.log('URL reçue : ' + req.url);
-
   try {
     const filePath = path.join(staticDir, pathname);
     const extname = path.extname(filePath);

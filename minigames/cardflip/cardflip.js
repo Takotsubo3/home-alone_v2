@@ -4,8 +4,8 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-let matchedPairs = 0; // Counter to track matched pairs
-const totalPairs = cards.length / 2; // Total pairs in the game
+let matchedPairs = 0;
+const totalPairs = cards.length / 2;
 
 function flipCard() {
   if (lockBoard || this === firstCard) return;
@@ -53,11 +53,16 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 800);
 }
 
 function resetBoard() {
-  [hasFlippedCard, lockBoard, firstCard, secondCard] = [false, false, null, null];
+  [hasFlippedCard, lockBoard, firstCard, secondCard] = [
+    false,
+    false,
+    null,
+    null,
+  ];
 }
 
 function handleGameWin() {
@@ -65,21 +70,25 @@ function handleGameWin() {
   const winMessageElement = document.createElement('div');
   winMessageElement.textContent = 'Congratulations! You matched all the cards!';
   winMessageElement.classList.add('win-message');
-  document.body.appendChild(winMessageElement);
 
-  // Optionally: Add restart button or redirect
-  setTimeout(() => {
-    alert('You won! Play again?');
-    window.location.reload(); // Reload the game
-  }, 1000);
+  // Insert above the memory game section
+  const memoryGame = document.querySelector('.memory-game');
+  memoryGame.parentElement.insertBefore(winMessageElement, memoryGame);
 }
 
-// Shuffle cards on page load
-(function shuffleCards() {
-  cards.forEach(card => {
-    card.style.order = Math.floor(Math.random() * cards.length);
-  });
-})();
-
 // Attach click event listener to each card
-cards.forEach(card => card.addEventListener('click', flipCard));
+cards.forEach((card) => card.addEventListener('click', flipCard));
+
+function showPopup() {
+  const popup = document.getElementById('popupContainer');
+  if (popup) {
+    popup.style.display = 'flex';
+  }
+}
+
+function hidePopup() {
+  const popup = document.getElementById('popupContainer');
+  if (popup) {
+    popup.style.display = 'none';
+  }
+}

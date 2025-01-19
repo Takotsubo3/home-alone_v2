@@ -18,29 +18,38 @@ function loadMessages() {
   return {};
 }
 
+function shuffleArray(array) {
+  // Fisher-Yates Shuffle method
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // Random index
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+}
+
 // Render Cardflip Page
 function renderCardflip() {
-  const cards = [
-    { i: 0, id: 'image1', image: 'cardflip/assets/teddy_1.png' },
-    { i: 1, id: 'image1', image: 'cardflip/assets/teddy_2.png' },
-    { i: 2, id: 'image2', image: 'cardflip/assets/knife_1.png' },
-    { i: 3, id: 'image2', image: 'cardflip/assets/knife_2.png' },
-    { i: 4, id: 'image3', image: 'cardflip/assets/key_1.png' },
-    { i: 5, id: 'image3', image: 'cardflip/assets/key_2.png' },
-    { i: 6, id: 'image4', image: 'cardflip/assets/notebook_1.png' },
-    { i: 7, id: 'image4', image: 'cardflip/assets/notebook_2.png' },
-    { i: 8, id: 'image5', image: 'cardflip/assets/mirror.png' },
+  // Array of unique card data
+  const uniqueCards = [
+    { id: '1', image: 'cardflip/assets/teddy_1.png' },
+    { id: '2', image: 'cardflip/assets/knife_1.png' },
+    { id: '3', image: 'cardflip/assets/key_1.png' },
+    { id: '4', image: 'cardflip/assets/notebook_1.png' },
+    { id: '5', image: 'cardflip/assets/mirror.png' },
+    { id: '6', image: 'cardflip/assets/knife_2.png' },
   ];
 
-  const shuffledCards = [...cards].sort(() => Math.random() - 0.5);
+  const cards = shuffleArray([...uniqueCards, ...uniqueCards]);
 
+  // Load hint messages
   const messages = loadMessages();
-  const headerMessage = messages.cardflip;
+  const winMessage = messages.cardflip || '';
 
+  // Render the HTML using Nunjucks
   const renderedHtml = nunjucks.render('cardflip.njk', {
-    cards: shuffledCards,
+    cards,
     backgroundImage: 'cardflip/assets/card_game_background.jpeg',
-    headerMessage,
+    winMessage,
   });
 
   return renderedHtml;
