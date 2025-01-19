@@ -70,15 +70,25 @@ function handleGameWin() {
   const winMessageElement = document.createElement('div');
   winMessageElement.textContent = 'Congratulations! You matched all the cards!';
   winMessageElement.classList.add('win-message');
-  document.body.appendChild(winMessageElement);
-}
 
-// Shuffle cards on page load
-(function shuffleCards() {
-  cards.forEach((card) => {
-    card.style.order = Math.floor(Math.random() * cards.length);
-  });
-})();
+  // Insert above the memory game section
+  const memoryGame = document.querySelector('.memory-game');
+  memoryGame.parentElement.insertBefore(winMessageElement, memoryGame);
+}
 
 // Attach click event listener to each card
 cards.forEach((card) => card.addEventListener('click', flipCard));
+
+function showPopup() {
+  const popup = document.getElementById('popupContainer');
+  if (popup) {
+    popup.style.display = 'flex';
+  }
+}
+
+function hidePopup() {
+  const popup = document.getElementById('popupContainer');
+  if (popup) {
+    popup.style.display = 'none';
+  }
+}

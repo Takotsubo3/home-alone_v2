@@ -24,6 +24,9 @@ body {
   gap: 20px;
   justify-content: center;
   padding: 30px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .memory-card {
@@ -34,7 +37,22 @@ body {
   transition: transform 0.5s;
 }
 
+.memory-card:active {
+  transform: scale(0.9);
+  transition: transform 0.2s;
+}
+
+.memory-card:hover {
+  transform: scale(1.05); /* Hover effect */
+}
+
+/* Ensure the hover effect is disabled when the card is flipped */
 .memory-card.flip {
+  transform: rotateY(180deg) !important;
+}
+
+/* Remove hover scale when card is flipped */
+.memory-card.flip:hover {
   transform: rotateY(180deg);
 }
 
@@ -113,27 +131,6 @@ a:hover {
 p {
   color: bisque;
   text-decoration: underline;
-}
-
-.memory-card:active {
-  transform: scale(0.9);
-  transition: transform 0.2s;
-}
-
-.winningMessage {
-  position: absolute;
-  display: inline-block;
-  height: 200px;
-  width: 550px;
-  background-color: black;
-  opacity: 50%;
-}
-
-.winning-Message {
-  opacity: 100%;
-  color: aliceblue;
-  font-size: 50px;
-  text-align: center;
 }
 
 /* Pop up info page*/
@@ -222,4 +219,16 @@ p {
 
 .popup-footer button:hover {
   background-color: #a34a94;
+}
+
+.win-message {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
