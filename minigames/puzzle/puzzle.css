@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url(../../resources/gallery/Card_Game_Background.jpeg);
+    background-image: url(./assets/Kitchen_background.jpeg);
     display: flex;
     flex-direction: column;
     /* justify-content: flex-start; */

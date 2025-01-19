@@ -363,7 +363,7 @@ function init() {
                     localStorage.removeItem("messageDisplayed"); 
                 }
             });
-            img.src = "../../resources/gallery/Puzzle_siblings.jpg";
+            img.src = "./assets/Puzzle_siblings.jpg";
         })
         .catch(error => {
             console.error("Error loading puzzle state:", error);
@@ -371,7 +371,7 @@ function init() {
             // Fall back to initializing a new puzzle if an error occurs
             img = new Image();
             img.addEventListener("load", onImage, false);
-            img.src = "../../resources/gallery/Puzzle_siblings.jpg";
+            img.src = "./assets/Puzzle_siblings.jpg";
         });
 }
 

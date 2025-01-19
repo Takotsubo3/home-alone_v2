@@ -13,7 +13,6 @@
 
 <body onload="init()">
     <h1>Land of memory</h1>
-    
     {% if completed %}
     <p class="completion-message">
         Do you remember him?
@@ -25,15 +24,14 @@
         document.onmouseup = null;
     </script>
     {% endif %}
-
+    
     <!--Header Button-->
     <div class="buttons">
         <button class="info-button" onclick="document.getElementById('popupContainer').style.display='flex'">?</button>
         <div class="popup-container" id="popupContainer">
             <div class="popup">
                 <h2>Gameplay Tutorial</h2>
-                <img src="https://c8.alamy.com/comp/PYFH4C/jigsaw-puzzle-game-with-kids-in-park-illustration-PYFH4C.jpg"
-                    alt="Tutorial" />
+                <img src="https://c8.alamy.com/comp/PYFH4C/jigsaw-puzzle-game-with-kids-in-park-illustration-PYFH4C.jpg" alt="Tutorial" />
                 <div class="popup-text">
                     <span>Click</span> and <span>Drag</span> the individual boxes to recreate the image
                 </div>
@@ -43,7 +41,7 @@
             </div>
         </div>
         <button>
-            <a href="../../kitchen/kitchen.html" id="button-link">X</a>
+          <a href="../../kitchen/kitchen.html" id="button-link">X</a>
         </button>
     </div>
 
@@ -54,18 +52,16 @@
             <div class="overlay"></div>
         </div>
     </div>
-    <script src="/puzzle.js"></script>
-
+    <script src="puzzle.js"></script>
 </body>
-
 <script>
-    // JavaScript for showing and hiding the popup
-    function showPopup() {
-        document.getElementById('popupContainer').style.display = 'block';
-    }
-    function hidePopup() {
-        document.getElementById('popupContainer').style.display = 'none';
-    }
-</script>
+        // JavaScript for showing and hiding the popup
+        function showPopup() {
+            document.getElementById('popupContainer').style.display = 'block';
+        }
 
+        function hidePopup() {
+            document.getElementById('popupContainer').style.display = 'none';
+        }
+    </script>
 </html>
