@@ -2,25 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'MaryKate', sans-serif;                                           
-    font-weight: 750;
-    font-style: normal;
 }
 
 body {
-    background-image: url(../../resources/gallery/Card_Game_Background.jpeg);
+    background-image: url(../../resources/gallery/Kitchen_background.jpeg);
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
+    justify-content: flex-start;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-size: cover;
+    font-family: 'MaryKate', sans-serif;
 }
+
 
 h1 {
     position: absolute;
     top: 10px;
+
     font-size: 5em;
     letter-spacing: 0.2em;
     color: rgb(16, 15, 15);
@@ -33,20 +33,6 @@ h1 {
   margin-top: 1em; /* Add spacing from the title */
 }
 
-
-/* Buttons Close & Tutorial */
-.buttons {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  display: flex;
-  gap: 10px; /* Adds space between buttons */
-}
-
-.info-button{
-  font-size: 2em;
-}
-
 button {
     font-size: 20px;
     height: 50px;
@@ -54,6 +40,15 @@ button {
     background-color: rgb(232, 195, 64);
     border-radius: 100%;
 }
+
+.buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+}
+
 
 a{
     text-decoration: none;
@@ -71,8 +66,6 @@ a:hover{
     color: red;
 }
 
-
-/* CANVA Puzzle*/
 
 #canvas {
     border: 1px solid black;
@@ -92,7 +85,6 @@ a:hover{
     background-color: #a76e6e; /* Optional background */
     border: 2px solid #000;/* Optional border */
     overflow: hidden;
-    cursor: grab;
 }
 
 .image-container img {
@@ -107,8 +99,7 @@ a:hover{
     background-color: rgba(222, 77, 40, 0.2); 
 }
 
-
- /* POP-UP Tutorial Page */
+ /* Pop up info page*/
  .popup-container {
   display: none;
   position: fixed;
