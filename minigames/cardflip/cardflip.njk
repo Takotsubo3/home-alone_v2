@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Game</title>
-  <link rel="stylesheet" href="cardflip.css">
+  <link rel="stylesheet" href="cardflip/cardflip.css">
   <style>
      @import url("https://fonts.cdnfonts.com/css/marykate");
 
@@ -52,15 +52,12 @@
 <section class="memory-game">
   {% for card in cards %}
     <div class="memory-card" data-framework="{{ card.id }}">
-      <img class="front-face" src="../../resources/gallery/cardflip{{ card.image }}" alt="{{ card.i }}" dataset-framework="{{card.id}}">
-      <img class="back-face" src="../../resources/gallery/card-verso.png" alt="Card Back">
+      <img class="front-face" src="{{ card.image }}" alt="{{ card.i }}" dataset-framework="{{card.id}}">
+      <img class="back-face" src="cardflip/assets/card_verso.png" alt="Card Back">
     </div>
   {% endfor %}
 </section>
 
-<script src="cardflip.js"></script>
-<script>
-
-</script>
+<script src="./cardflip/cardflip.js"></script>
 </body>
 </html>

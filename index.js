@@ -32,8 +32,8 @@ const traite_requete = function (req, res) {
       return;
     }
 
-    // Route for cardflip
-    if (pathname.includes('cardflip')) {
+    // Route for cardflip game
+    if (pathname === '/minigames/cardflip') {
       const renderedHtml = renderCardflip();
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(renderedHtml);
