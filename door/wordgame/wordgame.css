@@ -1,0 +1,109 @@
+@font-face {
+    font-family: Sinister_Sunday;
+    src: url(/home-alone/resources/gallery/Sinister_Sunday.otf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
+.content {
+    flex: 1; /* Allow content to expand and push the button to the bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    padding-top: 25vh;
+}
+
+.phrase {
+    margin: 20px;
+    font-size: 1.5em;
+    color: white;
+}
+
+.tags {
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    color: #dd1a1a;
+    font-family: Sinister_Sunday;
+}
+
+.tag {
+    padding: 10px 15px;
+    margin: 1px;
+    background-color: rgba(0, 0, 0, 0.0);
+    cursor: pointer;
+}
+
+.placeholder {
+    font-family: Sinister_Sunday;
+    font-size: 30px;
+    padding: 10px 15px;
+    min-width: 100px;
+    display: inline-block;
+    color: #dd1a1a;
+    font-weight: bold;
+}
+
+#validate {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); /* Adjust centering */
+    font-size: 1.5em;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #f800fc;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#validate:hover {
+}
+
+#validate::before {
+    content: ''; /* Creates the arrow */
+    position: absolute;
+    left: -20px; /* Place the arrow near the button */
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent transparent; /* Default: invisible */
+    transition: border-color 0.3s;
+}
+
+#validate:hover::before {
+    border-color: transparent transparent transparent #f800fc; /* Arrow visible */
+}
+
+body::after {
+    content: '';
+    flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}

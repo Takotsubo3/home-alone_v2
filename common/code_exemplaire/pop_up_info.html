@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Pop-up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #282828;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .popup {
+      width: 500px;
+      background: #2e2a24;
+      border: 2px solid #68396d;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      align-items: center;
+      text-align: center; /* Ensures text and images are centered */
+    }
+
+    .popup h2 {
+      text-align: center;
+      margin: 0 0 20px;
+      font-size: 20px;
+      color: #d4b6df;
+    }
+
+    .popup img {
+      max-width: 50%;
+      position: center;
+      border-radius: 5px;
+      margin: 0 auto;
+      
+    }
+
+    .popup-text {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .popup-text span {
+      background-color: #af8faf;
+      color: #2f2c2e;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 0 5px;
+      font-weight: bold;
+    }
+
+    .popup-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .popup-footer button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #69326e;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .popup-footer button:hover {
+      background-color: #a64c97;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup">
+    <h2>Gameplay Tutorial</h2>
+    <img src="https://www.bakerross.co.uk/craft-ideas/wp-content/uploads/2022/06/K485.jpg" alt="Tutorial" />
+    <div class="popup-text">
+      Match the images by using <span>Click</span> to make pairs
+    </div>
+    <div class="popup-footer">
+      <button>Got it</button>
+    </div>
+  </div>
+</body>
+</html>

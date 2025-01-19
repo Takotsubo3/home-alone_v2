@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Maze</title>
+    <link rel="stylesheet" href="labyrinth.css" />
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/marykate");
+    </style>
+  </head>
+  <body>
+
+    <div class="buttons">
+      <button>
+        <a href="../../hallway/hallway.html" id="button-link">X</a>
+      </button>
+      <button class="info-button" onclick="showPopup()">?</a></button>
+      <div class="popup-container" id="popupContainer">
+        <div class="popup">
+          <h2>Gameplay Tutorial</h2>
+          <img src="https://i.pinimg.com/736x/e4/a9/dc/e4a9dc72f31e953842603790e016973d.jpg" alt="Tutorial" />
+          <div class="popup-text">
+            Use the <span>arrows</span> on your keyboard to move the player.
+          </div>
+          <div class="popup-footer">
+            <button onclick="hidePopup()">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h1>The Maze</h1>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+    <div class="win">
+      <h1>Hint: ??</h1>
+    </div>
+  </body>
+  <script src="labyrinth.js"></script>
+  <script>
+    function showPopup() {
+      document.getElementById('popupContainer').style.display = 'flex';
+    }
+
+    function hidePopup() {
+      document.getElementById('popupContainer').style.display = 'none';
+    }
+  </script>
+</html>

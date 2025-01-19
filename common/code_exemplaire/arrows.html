@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <title>Boutons Flèche</title>
+    <style>
+        .image-background {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white; /* Couleur du texte pour être lisible */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* Style général pour les boutons flèche */
+        .arrow-button {
+            position: fixed;
+            top: 50%;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        /* Flèche vers la gauche */
+        .left-button {
+            left: 30px;
+        }
+
+        .left-button::before, .left-button::after {
+            content: '';
+            position: absolute;
+        }
+
+        .left-button::before {
+            /* Triangle pour la pointe de la flèche gauche */
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-right: 30px solid rgb(115, 18, 128);
+            left: 10px;
+            top: -20px;
+        }
+
+        .left-button::after {
+            /* Rectangle pour le corps de la flèche gauche */
+            width: 50px;
+            height: 25px;
+            background-color: rgb(115, 18, 128);
+            left: 25px;
+            top: -2px;
+        }
+
+        /* Flèche vers la droite */
+        .right-button {
+            right: 30px;
+        }
+
+        .right-button::before, .right-button::after {
+            content: '';
+            position: absolute;
+        }
+
+        .right-button::before {
+            /* Triangle pour la pointe de la flèche droite */
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid rgb(115, 18, 128);
+            right: 10px;
+            top: -20px;
+        }
+
+        .right-button::after {
+            /* Rectangle pour le corps de la flèche droite */
+            width: 50px;
+            height: 25px;
+            background-color: rgb(115, 18, 128);
+            right: 25px;
+            top: -2px;
+        }
+
+        /* Effet hover */
+        .left-button:hover::before {
+            border-right-color: rgb(147, 21, 163);
+        }
+
+        .left-button:hover::after {
+            background-color: rgb(147, 21, 163);
+        }
+
+        .right-button:hover::before {
+            border-left-color: rgb(147, 21, 163);
+        }
+
+        .right-button:hover::after {
+            background-color: rgb(147, 21, 163);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="image-background"></div>
+    <a href="page_gauche.html">
+        <div class="arrow-button left-button"></div>
+    </a>
+
+    <a href="page_droite.html">
+        <div class="arrow-button right-button"></div>
+    </a>
+
+</body>
+</html>

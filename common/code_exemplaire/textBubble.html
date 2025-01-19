@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,w_730/at%2Farchive%2F3736150d235dfc4c5c5da0c97793567c017180e0");
+            overflow: hidden;
+        }
+
+        .blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+
+        .page {
+            display: none;
+            height: 100vh;
+            width: 100vw; 
+            justify-content: center;
+            align-items: center;
+        }
+        .page.active {
+            display: flex;
+        }
+        .rectangle {
+            width: 30%;
+            height: 30%;
+            background-color: rgba(0, 0, 0, 0.0);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            position: absolute;
+            top: 65%;
+            right: 25%;
+        }
+        .text-box {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.3); 
+            color: #693642;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 90%; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+            word-wrap: break-word; 
+        }
+
+        .text-box::before {
+            content: attr(data-name);
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            background: #f5ccd9; 
+            color: #6a2838; 
+            font-size: 14px;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+        button {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            width: 50px;  
+            height: 50px; 
+            font-size: 200%;
+            font-weight: 500;  
+            color: black;
+            background-color: orangered;
+            border: 2px solid orangered;
+            border-radius: 50%; 
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        button:hover {
+            background-color: #ff0000;
+            color: #fff;
+            border-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Flou -->
+    <div id="blurOverlay" class="blur-overlay"></div>
+
+    <!-- Page 1 -->
+    <div id="page1" class="page active">
+        <div class="rectangle"></div>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page">
+        <div class="blur"></div>
+        <div class="image-container">
+            <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/08/Halloween-Icon-Bloody-Knife-With-Line-Graphics-38023276-2-580x386.png" alt="couteau">
+        </div>
+        <button id="backButton">✖</button>
+    </div>
+
+    <!-- Page 1 with Text Box -->
+    <div id="page1-square" class="page">
+        <div class="rectangle"></div>
+        <div class="text-box" data-name="Clair">
+            HEHEHHEHEHEHEHEHhhehehheheheh FIREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE!! 
+        </div>
+    </div>
+
+    <script>
+        const page1 = document.getElementById('page1');
+        const page2 = document.getElementById('page2');
+        const page1Square = document.getElementById('page1-square');
+        const rectangle = document.querySelector('.rectangle');
+        const backButton = document.getElementById('backButton');
+        const blurOverlay = document.getElementById('blurOverlay');
+
+        // Afficher la deuxième page au clic sur le rectangle
+        rectangle.addEventListener('click', () => {
+            page1.classList.remove('active');
+            page2.classList.add('active');
+            blurOverlay.classList.add('active');
+        });
+
+        // Retour à la page 1 avec le carré
+        backButton.addEventListener('click', () => {
+            page2.classList.remove('active');
+            page1Square.classList.add('active');
+            blurOverlay.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

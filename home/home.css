@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css?family=Kirang+Haerang');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+    background-image: url("../resources/gallery/home_background.png");
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-attachment: fixed;
+    background-position: center; /* Centre l'image */
+    position: absolute;
+    left: 10%;
+
+}
+
+h2{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+
+    text-overflow: ellipsis;
+    border-color: rgb(255, 0, 0);
+    font-family: 'Amatic SC', cursive;
+    animation: squiggle 0.7s infinite;
+
+}
+
+h3{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    
+
+    text-overflow: ellipsis;
+    border-color: rgb(255, 0, 0);
+    font-family: 'Amatic SC', cursive;
+    animation: squiggle2 0.1s infinite;
+
+}
+
+@keyframes squiggle {
+    0% { transform: rotate(0deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes squiggle2 {
+
+    75% { transform: rotate(0.3deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-0.3deg); }
+}
+
+button {
+
+    display: block;
+    margin: 5px auto;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #000000;
+    border: 0.08em solid #000000;
+    border-radius: 0.3em;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow:0 0 10px #ffffff, 0 0 1000px #ffffff ;
+    font-family: 'Kirang Haerang', cursive;
+}
+  
+button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+
+    background-color: #000000;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #777777;
+
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0.4em 0.1em 0.019em #1c1c1c;
+    border-width: none;
+}
+  
+button:hover{
+    background-color: #ffffff;
+    animation: squiggle 0.3s infinite;
+
+}
+button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0 #2f0000,0 0 20px #3f372f;
+    color: #696969;
+    animation: squiggle 0.3s infinite;
+    
+}
+  
+button span:not(hover) {
+    transition: all 0.3s;
+}
+  
+div {
+    display: flex;
+    flex-direction: column; /* Empile les boutons en colonne */
+    height: 100vh; /* Pour centrer verticalement */
+}
+
+.logo {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    filter: drop-shadow(0 0 75px rgba(255, 255, 255, 0.452));
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover{
+    cursor: pointer;
+    color: red;
+    text-decoration: underline;
+}
