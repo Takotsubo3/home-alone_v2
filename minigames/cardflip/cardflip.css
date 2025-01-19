@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url('../../Resources/gallery/Card_Game_Background.jpeg');
+  background-image: url('./assets/card_game_background.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -92,8 +92,6 @@ p {
   margin: auto;
   width: 1200px;
   height: 700px;
-  /* border: 2px solid rgb(150, 60, 60); */
-  background-image: url('../../Resources/gallery/cardflip-background3.jpeg');
   padding: 30px;
   display: flex;
   flex-wrap: wrap;

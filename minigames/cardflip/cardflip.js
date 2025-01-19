@@ -1,20 +1,20 @@
 'use strict';
 
-const cards = document.getElementsByClassName("memory-card");
+const cards = document.getElementsByClassName('memory-card');
 
 let flipped = false;
 let firstCard = null;
 let secondCard = null;
 let lock = false;
 let matchedPairs = 0;
-const totalPairs = cards.length / 2; // Assuming even number of cards
+const totalPairs = cards.length / 2;
 
 const flipCard = function () {
   if (lock || this === firstCard) {
     return;
   }
 
-  this.classList.add("flip");
+  this.classList.add('flip');
 
   if (!flipped) {
     // First card flipped
@@ -34,24 +34,23 @@ const flipCard = function () {
   }
 };
 
-Array.from(cards).forEach((card) => card.addEventListener("click", flipCard));
+Array.from(cards).forEach((card) => card.addEventListener('click', flipCard));
 
 function handleMatch() {
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
   resetCards();
 
   matchedPairs++;
   if (matchedPairs === totalPairs) {
     showWinMessage();
-    
   }
 }
 
 function unflipCards() {
   setTimeout(() => {
-    firstCard.classList.remove("flip");
-    secondCard.classList.remove("flip");
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
     resetCards();
   }, 300);
 }
@@ -66,18 +65,10 @@ function resetCards() {
   });
 })();
 
-
-
 function showPopup() {
-  const popup = document.getElementById("popupContainer");
-  if (popup) {
-    popup.style.display = "flex";
-  }
+  document.getElementById('popupContainer').style.display = 'flex';
 }
 
 function hidePopup() {
-  const popup = document.getElementById("popupContainer");
-  if (popup) {
-    popup.style.display = "none";
-  }
+  document.getElementById('popupContainer').style.display = 'none';
 }
