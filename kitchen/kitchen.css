@@ -71,11 +71,11 @@
 
 /*indice fridge*/
 .fridge-container {
-    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 340);
+    width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 325);
     height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto);
     position: absolute;
-    bottom: -3%;
-    left: -1%;
+    bottom: -0.75%;
+    left: -0.5%;
     transition: filter 0.1s ease, transform 0.1s ease;
     cursor: pointer;
 }
@@ -83,12 +83,12 @@
 .fridge-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit:fill;
 }
 
 #fridge:hover {
-    filter: drop-shadow(0 0 5px #ff9900);
-    transform: scale(1.05);
+    filter: drop-shadow(0 0 2px #ff9900);
+    transform: scale(1.005);
 }
 
 
