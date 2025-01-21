@@ -25,10 +25,17 @@
             </a>
 
             <!--Exit door game -->
-            <div class="door-container">
+            <div class="door-container" id="door-container">
                 <a href="../door/wordgame/wordgame.html">
                     <img src="../resources/gallery/indice_door.png" id="door">
                 </a>
+            </div>
+
+            <!--Popup confirmation-->
+            <div id="exit-popup" class="popup hidden">
+                <p>C'EST LA SORTIE. ES-TU SÛR DE VOULOIR PARTIR ?</p>
+                <button onclick="proceedToExit()">OUI</button>
+                <button onclick="closePopup()">NON</button>
             </div>
 
             <!--boite-->
@@ -63,9 +70,9 @@
 
         </div>
     </div>
+
+    <!-- Connexion au script JS -->
+    <script src="../hallway/hallway.js"></script>
 </body>
 
-<script src="../common/room_style/pop-up.js"></script>
-   
-</body>
 </html>
