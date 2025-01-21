@@ -20,7 +20,7 @@ body {
     justify-content: center;
     position: relative;
     min-height: 100vh;
-    background-image: url(./door_background.png);
+    background-image: url(./data/door_background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
