@@ -178,10 +178,10 @@
     transform: translate(-50%, -50%);
     background: rgba(18, 18, 18, 0.8);
     color: white;
-    padding: 100px;
+    padding: 50px;
     border-radius: 10px;
     font-family: 'MaryKate', sans-serif;
-    font-size: 24px; /* Ajuste la taille si nécessaire */
+    font-size: 47px; 
     text-align: center;
     z-index: 1000;
 }
@@ -199,7 +199,7 @@
     cursor: pointer;
     border-radius: 5px;
     font-family: 'MaryKate', sans-serif;
-    font-size: 18px; 
+    font-size: 40px; 
 }
 
 .popup button:hover {
