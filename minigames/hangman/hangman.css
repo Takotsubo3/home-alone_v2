@@ -313,3 +313,30 @@ body::after {
       color: #fff;
       border-color: #ff0000;
     }
+
+/* Style for the New Word button */
+.new-word-button {
+  display: none; 
+  width: 60px;
+  height: 60px;
+  background-color: orangered;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  position: fixed; /* Fixed position to the bottom-right */
+  bottom: 15%;
+  right: 2%;
+  transition: background-color 0.3s;
+}
+
+.new-word-button:hover {
+  background-color: #ff0000;
+}
+
+/* When button is visible */
+.new-word-button.show {
+  display: block;
+}
