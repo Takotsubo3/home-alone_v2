@@ -1,12 +1,12 @@
 document.getElementById('door-container').addEventListener('click', function(event) {
-    event.preventDefault();  // Empêche la redirection immédiate
-    document.getElementById('exit-popup').classList.remove('hidden');  // Affiche le pop-up
+    event.preventDefault();  // Prevents the default behavior if any
+    document.getElementById('exit-popup').classList.remove('hidden');  // Shows the pop-up
 });
 
 function proceedToExit() {
-    window.location.href = '../door/wordgame/wordgame.html';  // Redirige vers la porte de sortie
+    window.location.href = '../minigames/wordgame/wordgame.html';  // Redirects to the new page
 }
 
 function closePopup() {
-    document.getElementById('exit-popup').classList.add('hidden');  // Cache le pop-up
+    document.getElementById('exit-popup').classList.add('hidden');  // Hides the pop-up
 }

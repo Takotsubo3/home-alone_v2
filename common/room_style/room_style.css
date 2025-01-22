@@ -27,88 +27,26 @@ body {
     background-position: center;
 }
 
-
-/*les boutons flèche */
 .arrow-button {
-    position: fixed;
+    position: absolute;
     top: 50%;
-    width: 35px; 
-    height: 25px; 
     cursor: pointer;
-    transition: transform 0.2s;
-    z-index: 1000;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+    width: 40px; 
+    height: 40px; 
+    transform: translateY(-10%);
 }
 
-/* Flèche vers la gauche */
-.left-button {
-    left: 30px;
+.left-arrow {
+    left: 5%;
 }
 
-.left-button::before, .left-button::after {
-    content: '';
-    position: absolute;
+.right-arrow {
+    right: 7%;
 }
 
-.left-button::before {
-    width: 0;
-    height: 0;
-    border-top: 35px solid transparent; 
-    border-bottom: 35px solid transparent; 
-    border-right: 35px solid rgb(115, 18, 128); 
-    left: 10px;
-    top: -21px;
-}
-
-.left-button::after {
-    width: 55px; 
-    height: 30px;
-    background-color: rgb(115, 18, 128);
-    left: 25px;
-    top: -2px;
-}
-
-/* Flèche vers la droite */
-.right-button {
-    right: 30px;
-}
-
-.right-button::before, .right-button::after {
-    content: '';
-    position: absolute;
-}
-
-.right-button::before {
-    /* Triangle pour la pointe de la flèche droite */
-    width: 0;
-    height: 0;
-    border-top: 35px solid transparent; 
-    border-bottom: 35px solid transparent; 
-    border-left: 35px solid rgb(115, 18, 128); 
-    right: 10px;
-    top: -21px; 
-}
-
-.right-button::after {
-    width: 55px; 
-    height: 30px;
-    background-color: rgb(115, 18, 128);
-    right: 25px;
-    top: -2px;
-}
-
-
-.left-button:hover::before {
-    border-right-color: rgb(147, 21, 163);
-}
-
-.left-button:hover::after {
-    background-color: rgb(147, 21, 163);
-}
-
-.right-button:hover::before {
-    border-left-color: rgb(147, 21, 163);
-}
-
-.right-button:hover::after {
-    background-color: rgb(147, 21, 163);
+.arrow-button:hover {
+    filter: drop-shadow(0 0 5px #ff9900);
+    transform: scale(1.05);
 }

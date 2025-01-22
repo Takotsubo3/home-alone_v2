@@ -65,10 +65,10 @@ style.textContent = `
         transform: translateX(-50%);
         display: inline-block;
         background: rgba(255, 255, 255, 0.3);
-        color: #693642;
+        color:rgb(0, 0, 0);
         border-radius: 20px;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 1.5;
         max-width: 50%;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
@@ -82,7 +82,7 @@ style.textContent = `
         left: 10px;
         background: #f5ccd9;
         color: #6a2838;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: bold;
         padding: 2px 8px;
         border-radius: 10px;
