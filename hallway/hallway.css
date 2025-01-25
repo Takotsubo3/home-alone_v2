@@ -171,4 +171,37 @@
     filter: drop-shadow(0 0 5px #ff9900);
     transform: scale(1.05);
 }
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(18, 18, 18, 0.8);
+    color: white;
+    padding: 100px;
+    border-radius: 10px;
+    font-family: 'MaryKate', sans-serif;
+    font-size: 24px; /* Ajuste la taille si nécessaire */
+    text-align: center;
+    z-index: 1000;
+}
 
+.hidden {
+    display: none;
+}
+
+.popup button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #8d2777;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'MaryKate', sans-serif;
+    font-size: 18px; 
+}
+
+.popup button:hover {
+    background: #600f59;
+}
