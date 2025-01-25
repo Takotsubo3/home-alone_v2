@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="kitchen.css">
     <link rel="stylesheet" type="text/css" href="../common/room_style/room_style.css">
+    <link rel="stylesheet" type="text/css" href="Claire.css">
     <title>Kitchen</title>
 </head>
 
 <body>
 <div class="main-container">
     <div class="background">
+
+
 
         <div class="puzzle-container">
             <a href="./puzzle/puzzle.html">
@@ -23,13 +26,18 @@
             <a href="/minigames/cardflip">
                 <img src="../resources/gallery/indice-cardgame.png" id="cardgame" alt="Card game">
             </a>
-        </div>        
+        </div>      
+        
+        <video autoplay muted>
+            <source src="../bedroom/clairenew.webm" type="video/webm">
+          </video>
 
-        <a href="../bedroom/bedroom.html" class="arrow-button left-button" aria-label="Go to bedroom"></a>
-        <a href="../livingroom/livingroom.html" class="arrow-button right-button" aria-label="Go to living room"></a>
+        <a href="../bedroom/bedroom.html" id="rightArrow" class="arrow-button left-button" aria-label="Go to bedroom"></a>
+        <a href="../livingroom/livingroom.html"  id="leftArrow" class="arrow-button right-button" aria-label="Go to living room"></a>
 
     </div>
 </div>
+<script src="claire.js"></script>
 </body>
 
 </html>

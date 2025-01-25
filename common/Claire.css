@@ -1,0 +1,45 @@
+/* Root variables for responsive dimensions */
+:root {
+  --video-width: calc(min(100vw / 1920, 100vh / 1080) * 300);
+  --video-height: calc(var(--video-width) * 2); 
+}
+
+.videoContainer {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; 
+}
+
+video {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: var(--video-width); 
+  height: var(--video-height); 
+  transform: scale(2) rotate(272deg); 
+  filter: brightness(50%);
+}
+
+@keyframes WalkingClaireLefttoRight {
+  from {
+    transform: translateX(0) scale(2) rotate(272deg); 
+  }
+  to {
+    transform: translateX(70vh) scale(2) rotate(272deg); 
+}
+}
+
+@keyframes WalkingClaireRighttoLeft {
+  from {
+    transform: translateX(150vh) scale(2) rotate(272deg) scaleY(-1); 
+  }
+  to {
+    transform: translateX(80vh) scale(2) rotate(272deg) scaleY(-1); 
+  }
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0; 
+  overflow: hidden; 
+}
