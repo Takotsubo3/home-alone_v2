@@ -1,7 +1,8 @@
 .background {
     background-image: url("../resources/gallery/Hallway_Background_Present.png");
 }
- 
+
+/*labyrinth*/
 .laby-container{
     width: calc(min(1px, 100vw / 1920, 100vh / 1080) * 280); /* Set width based on the formula */
     height: calc(min(1px, 100vw / 1920, 100vh / 1080) * auto); /* Adjust height */
