@@ -1,3 +1,5 @@
-{
-    "cardflip": "Flip hintsssss!"
+[
+    {"name" : "cardFlip",
+    "hint" : "Flip Hintssss!!!!"
 }
+]
