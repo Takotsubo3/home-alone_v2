@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../wordgame/wordgame.css">
+    <title>Wordgame</title>
+</head>
+ 
+<body>
+    <div class="content">
+ 
+        <div class="phrase">
+            Les <span class="placeholder empty" data-correct="Oiseaux"></span> mangent des <span
+                class="placeholder empty" data-correct="Graines"></span> en hiver.
+        </div>
+        <div class="tags">
+            <div class="tag" draggable="true">Oiseaux</div>
+            <div class="tag" draggable="true">Loups</div>
+            <div class="tag" draggable="true">Graines</div>
+            <div class="tag" draggable="true">Pain</div>
+            <div class="tag" draggable="true">Herbe</div>
+        </div>
+        <div class="book-container">
+            <div class="book">
+                <img src="./assets/hands.png">
+            </div>
+        </div>
+    </div>
+    <button id="validate">Conclude</button>
+    <div id="result"></div>
+ 
+    <script src="wordgame.js">
+    </script>
+</body>
+ 
+</html>
