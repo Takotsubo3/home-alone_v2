@@ -6,19 +6,10 @@ const { renderCardflip } = require('./minigames/cardflip/cardflip.module');
 
 const staticDir = __dirname;
 
-const saveHint = require('./saveHint');
-
 // Handle Requests
 const traite_requete = function (req, res) {
   const requete = url.parse(req.url, true);
   const pathname = requete.pathname;
-  console.log(pathname);
-
-  if(req.url.startsWith("/saveHint.js")) {
-    console.log("Gettiing url?");
-    console.log(req.url);
-    saveHint(req, res);
-  }
 
   try {
     const filePath = path.join(staticDir, pathname);
@@ -53,16 +44,6 @@ const traite_requete = function (req, res) {
       return;
     }
 
-    if(req.url.startsWith('/saveHint.js')) {
-      console.log(pathname);
-      saveHint();
-      res.end();
-      return;
-    }
-
-
-
-
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>404 Not Found</h1>');
   } catch (e) {
@@ -82,6 +63,3 @@ const traite_requete = function (req, res) {
     console.log(`Serveur en écoute sur : http://localhost:${port}`);
   });
 })();
-
-
-//add option when url.startWith(saveHint) to call saveHint function

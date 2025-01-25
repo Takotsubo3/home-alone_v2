@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Game</title>
-    <link rel="stylesheet" href="cardflip/cardflip.css" />
-    <style>
-      @import url('https://fonts.cdnfonts.com/css/marykate');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Game</title>
+  <link rel="stylesheet" href="cardflip/cardflip.css">
+  <style>
+     @import url("https://fonts.cdnfonts.com/css/marykate");
 
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background-image: url('{{ backgroundImage }}');
-        background-size: cover;
-        font-family: 'MaryKate', sans-serif;
-        font-weight: 750;
-        font-style: normal;
-        overflow: hidden;
-      }
+     *{
+      box-sizing:border-box;
+     }
+    body {
+      background-image: url("{{ backgroundImage }}");
+      background-size: cover;
+      font-family: 'MaryKate', sans-serif;                                           
+      font-weight: 750;
+      font-style: normal;
+      overflow: hidden;
+    }
 
-      .win-message {
-        text-align: center;
-        font-size: 2em;
-      }
-    </style>
-  </head>
-  <body>
-    {#
-    <h1>Parallel Universe</h1>
-    #}
-    <div class="buttons">
-      <button class="close-button">
-        <a href="../../kitchen/kitchen.html">X</a>
-      </button>
-      <button class="close-button" onclick="showPopup()">?</button>
+    .win-message{
+      text-align:center;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+{# <h1>Parallel Universe</h1> #}
+
+<div class="buttons">
+  <button class="close-button">
+    <a href="../../kitchen/kitchen.html">X</a>
+  </button>
+  <button class="close-button" onclick="showPopup()">?</button>
+</div>
+
+<div class="popup-container" id="popupContainer" style="display:none;">
+  <div class="popup">
+    <h2>Gameplay Tutorial</h2>
+    <p>Match the images by clicking to make pairs.</p>
+    <button onclick="hidePopup()">Got it</button>
+  </div>
+</div>
+
+{% if headerMessage %}
+  <div class="win-message">{{ headerMessage }}</div>
+{% endif %}
+
+<section class="memory-game">
+  {% for card in cards %}
+    <div class="memory-card" data-framework="{{ card.id }}">
+      <img class="front-face" src="{{ card.image }}" alt="{{ card.id }}">
+      <img class="back-face" src="cardflip/assets/card_verso.png" alt="Card Back">
     </div>
+  {% endfor %}
+</section>
 
-
-    <div class="popup-container" id="popupContainer" style="display: none">
-      <div class="popup">
-        <h2>Gameplay Tutorial</h2>
-        <p>Match the images by clicking to make pairs.</p>
-        <button onclick="hidePopup()">Got it</button>
-      </div>
-    </div>
-
-    
-    <div class="hint-button" id="hint-button">
-      <form action="">
-        <span class="hint"><button onclick="getHintMethod(this)" data-hint-type="cardFlip"> Hint </button></span>
-      </form>
-    </div>
-    <p id="theData"></p>
-
-    <section class="memory-game">
-      {% for card in cards %}
-      <div class="memory-card" data-framework="{{ card.id }}">
-        <img class="front-face" src="{{ card.image }}" alt="{{ card.id }}" />
-        <img
-          class="back-face"
-          src="cardflip/assets/card_verso.png"
-          alt="Card Back"
-        />
-      </div>
-      {% endfor %}
-    </section>
-
-    <script src="./cardflip/cardflip.js"></script>
-  </body>
+<script src="./cardflip/cardflip.js"></script>
+</body>
 </html>

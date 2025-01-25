@@ -70,7 +70,7 @@ function verifierCollision() {
   } else if (joueur.x === 4 && joueur.y === 4) {
     message.textContent =
       "Gagné!";
-    
+    resetPositions();
   }
 }
 
