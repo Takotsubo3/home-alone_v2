@@ -1,0 +1,46 @@
+body {
+    font-family: 'MaryKate', sans-serif;
+    background: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+.story-text {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    font-size: 500%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#next-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 100%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#next-btn:hover {
+    background: gray;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out; /* Ensures smooth fade transition */
+}
