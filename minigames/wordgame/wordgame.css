@@ -1,6 +1,6 @@
 @font-face {
     font-family: Sinister_Sunday;
-    src: url(./Sinister_Sunday.otf);
+    src: url(/home-alone/resources/gallery/Sinister_Sunday.otf);
 }
 
 * {
@@ -93,6 +93,9 @@ body {
     left: 50%;
     transform: translateX(-50%);
     /* Adjust centering */
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%); /* Adjust centering */
     font-size: 1.5em;
     padding: 15px 30px;
     background-color: rgba(0, 0, 0, 0.0);
@@ -114,12 +117,19 @@ body {
     position: absolute;
     left: -20px;
     /* Place the arrow near the button */
+}
+
+#validate::before {
+    content: ''; /* Creates the arrow */
+    position: absolute;
+    left: -20px; /* Place the arrow near the button */
     top: 50%;
     transform: translateY(-50%);
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent transparent transparent;
     /* Default: invisible */
+    border-color: transparent transparent transparent transparent; /* Default: invisible */
     transition: border-color 0.3s;
 }
 
@@ -132,6 +142,12 @@ body:after {
     content: '';
     flex-grow: 1;
     /* Pushes the button to the bottom */
+    border-color: transparent transparent transparent #f800fc; /* Arrow visible */
+}
+
+body::after {
+    content: '';
+    flex-grow: 1; /* Pushes the button to the bottom */
 }
 
 #result {

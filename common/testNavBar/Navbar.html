@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barre d'Inventaire</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <button onclick="showInventoryBar()">Show</button>
+    <div class="inventory-bar" id="inventoryBar">
+        <button onclick="hideInventoryBar()">hide</button>
+
+        <!-- Les 10 cases fixes -->
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+        <div class="inventory-item empty"></div>
+    </div>
+
+    <script >
+        const inventoryBar = document.getElementById('inventoryBar');
+
+function showInventoryBar() {
+    inventoryBar.style.top = '0';
+}
+
+function hideInventoryBar() {
+    inventoryBar.style.top = '-70px';
+}
+
+// Function to load inventory from JSON file
+async function loadInventory() {
+    try {
+        const response = await fetch('inventaire.json'); // Fetch the JSON file
+        const data = await response.json(); // Parse the JSON data
+        populateInventory(data); // Call populateInventory with the fetched data
+    } catch (error) {
+        console.error('Erreur lors du chargement de l\'inventaire:', error);
+    }
+}
+
+// Function to populate the inventory bar
+function populateInventory(items) {
+    const inventorySlots = document.querySelectorAll('.inventory-item'); // Select all inventory slots
+    items.slice(0, 10).forEach((item, index) => {
+        const slot = inventorySlots[index]; // Get the slot corresponding to the item index
+        slot.classList.remove('empty'); // Remove 'empty' class if present
+        slot.innerHTML = `
+            <img src="${item.image_url}" alt="${item.name}" title="${item.name}" />
+        `; // Populate the slot with the item's image
+    });
+}
+
+// Load the inventory when the script runs
+loadInventory();
+
+    </script>
+</body>
+</html>

@@ -30,18 +30,6 @@ function genererPlateau() {
   }
 }
 
-function deplacerJoueur(dx, dy) {
-  const newX = joueur.x + dx,
-    newY = joueur.y + dy;
-  if (newX >= 0&& newX < 5 &&newY >= 0 && newY < 5) {
-    joueur.x= newX;
-    joueur.y = newY;
-    deplacerEnnemi();
-    verifierCollision();
-    genererPlateau();
-  }
-}
-
 function deplacerEnnemi() {
   const directions = [
     { dx: -1,dy: 0 },
@@ -58,8 +46,15 @@ function deplacerEnnemi() {
   );
   const mouvement =
     mouvementsValides[Math.floor(Math.random()* mouvementsValides.length)];
+    
   ennemi.x += mouvement.dx;
   ennemi.y +=mouvement.dy;
+}
+
+function resetPositions() {
+  joueur = { x: 0, y: 0 };
+  ennemi = { x: 4, y: 4 };
+  genererPlateau();
 }
 
 function verifierCollision() {
@@ -70,14 +65,19 @@ function verifierCollision() {
   } else if (joueur.x === 4 && joueur.y === 4) {
     message.textContent =
       "Gagné!";
-    
   }
 }
 
-function resetPositions() {
-  joueur = { x: 0, y: 0 };
-  ennemi = { x: 4, y: 4 };
-  genererPlateau();
+function deplacerJoueur(dx, dy) {
+  const newX = joueur.x + dx,
+    newY = joueur.y + dy;
+  if (newX >= 0&& newX < 5 &&newY >= 0 && newY < 5) {
+    joueur.x= newX;
+    joueur.y = newY;
+    deplacerEnnemi();
+    verifierCollision();
+    genererPlateau();
+  }
 }
 
 document.addEventListener("keydown", (event) => {

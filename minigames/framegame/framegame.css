@@ -1,0 +1,30 @@
+.drop-zone {
+
+    width: 600px;
+    height: 600px;
+    border: 2px dashed #aaa;
+    left: 30%;
+    top: 14%;
+    position: absolute;
+   
+
+
+    background-image: url("assets/fond.png");
+  }
+  .drop-zone img {
+    width: 100%;
+    height: 100%S;
+
+
+  }
+
+body{
+    justify-content: center;
+    align-items: center;
+
+
+
+
+
+
+}

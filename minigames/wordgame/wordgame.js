@@ -12,7 +12,7 @@ document.querySelectorAll('.tag').forEach(tag => {
 document.querySelectorAll('.placeholder').forEach(placeholder => {
     placeholder.addEventListener('dragover', function (event) {
         event.preventDefault(); // Nécessaire pour permettre le drop
-        this.style.borderColor = '#ffff1f'; // Change la bordure en survol
+        this.style.borderColor = '#ffffff'; // Change la bordure en survol
     });
 
     placeholder.addEventListener('dragleave', function () {
@@ -26,6 +26,7 @@ document.querySelectorAll('.placeholder').forEach(placeholder => {
             this.textContent = data;
             this.setAttribute('data-answer', data);
             placeholder.classList.add('filled'); // Retire les underscores
+
 
             // Supprime le tag glissé
             const draggedTag = Array.from(document.querySelectorAll('.tag')).find(tag => tag.textContent === data);
