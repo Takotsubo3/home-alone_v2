@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "piece1", "image_url": "assets/shadow.png" },
+  { "id": 2, "name": "piece2", "image_url": "assets/clock.png" },
+  { "id": 3, "name": "piece3", "image_url": "assets/teddybear.png" },
+  { "id": 4, "name": "piece4", "image_url": "assets/knife.png" },
+  { "id": 5, "name": "piece5", "image_url": "assets/key.png" },
+  { "id": 6, "name": "piece6", "image_url": "assets/text.png" }
+  ]
+  
