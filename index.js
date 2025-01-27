@@ -76,7 +76,7 @@ const traite_requete = function (req, res) {
 // Start Server
 (function () {
   'use strict';
-  const port = 5000;
+  const port = 4000;
   const server = http.createServer(traite_requete);
   server.listen(port, () => {
     console.log(`Serveur en écoute sur : http://localhost:${port}`);
